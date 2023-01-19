@@ -1,0 +1,63 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(74,21,75);
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+#navhead{
+    display: flex;
+    color: white;
+    gap: 20px;
+    font-size: larger;
+    margin-right: 40px;
+}
+#navbarlogo>img{
+    height: 100%;
+}
+
+#navbarlogo{
+    margin-left: 40px;
+}
+
+#home{
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+}
+#home>div{
+    width: 45%;
+}
+
+#homeleft>h1{
+    color: white;
+    font-size: 60px;
+    
+
+}
+
+.yelloclr{
+    color: #ecb22e;
+}
+
+#homeleft>p{
+    color: white;
+    font-size: x-large;
+    margin-top: -40px;
+    
+}
+
+#sign_buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+#sign_buttons>button{
+    width: 48%;
+    height: 50px;
+    font-size: larger;
+}
