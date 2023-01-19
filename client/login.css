@@ -1,0 +1,73 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(74,21,75);
+}
+#logo{
+    margin: auto;
+    margin-top: 40px;
+    
+
+}
+#logo>img{
+    width: 15%;
+    /* display: flex;
+    justify-content: center; */
+    margin-left: 42%;
+    
+}
+#midtext{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#midtext>h1{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+#midtext>p{
+    
+    font-size:20px;
+    text-align: center;
+}
+#details{
+    
+    
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    margin-top: 80px;
+
+}
+
+#details>input{
+    height: 40px;
+    background-color: white;
+}
+#details>button{
+    width: 50%;
+    margin: auto;
+    height: 50px;
+    background-color: rgb(236,178,46);
+    border: none;
+    box-shadow: rgba(242, 242, 7, 0.35) 0px 5px 15px;
+    font-size: large;
+}
+
+.hrwidth{
+    width: 50%;
+}
+#signuplink{
+    border: 1px solid white;
+    margin: auto;
+    width: 20%;
+    text-align: center;
+    background-color: wheat;
+}
