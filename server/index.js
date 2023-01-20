@@ -6,8 +6,12 @@ const {Server}=require("socket.io")
 const app=express();
 
 const {connection}=require("./config/db")
+const {srout}=require("./routes/signup");
+const {lrout}=require("./routes/login")
+const {Usermodel}=require("./models/user.model")
 
-
+app.use("/signup",srout);
+app.use("/login",lrout);
 
 const httpserver= http.createServer(app);
 
