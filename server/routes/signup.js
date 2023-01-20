@@ -17,16 +17,17 @@ srout.post("/",async(req,res)=>{
     const useravailable= await Usermodel.findOne({email});
 
     if(useravailable){
-      return  res.send("user already available please login");
+      return  res.send({msg:"user already available please login",status:"fail"});
     }
     else{
         bcrypt.hash(password, 5, async function(err, hash) {
             if(err){
-                return res.send("someting is wrong")
+                return res.send({msg:"someting is wrong",status:"error"})
             }
             let user=new Usermodel({name,email,password:hash});
             await user.save();
-            return res.send({status:"signup successfull"});
+             res.send({msg:"signup successfull",status:"success"});
+            
         });
 
     }

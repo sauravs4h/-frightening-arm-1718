@@ -1,10 +1,11 @@
 const { Socket } = require("engine.io");
 const express=require("express");
 const http=require("http");
-const {Server}=require("socket.io")
+const {Server}=require("socket.io");
+const cors = require('cors');
 
 const app=express();
-
+app.use(cors());
 const {connection}=require("./config/db")
 const {srout}=require("./routes/signup");
 const {lrout}=require("./routes/login")
