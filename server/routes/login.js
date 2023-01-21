@@ -28,18 +28,18 @@ lrout.post("/",async(req,res)=>{
 
         bcrypt.compare(password, userhashpassword, function(err, result) {
             if(err){
-                return res.send({status:"try again"})
+                return res.send({msg:"try again",status:"error"})
             }
             
             var token = jwt.sign({ userid: userid }, 'shhhhh');
-            return res.send({status:"login successfull",token:token})
+            return res.send({msg:"login successfull",token:token,status:"success"})
             
         });
         
 
         
     }else{
-        return res.send({status:"please signup"})
+        return res.send({msg:"please signup",status:"error"})
     }
 
     
