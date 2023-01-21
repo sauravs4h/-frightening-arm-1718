@@ -22,7 +22,7 @@ lrout.post("/",async(req,res)=>{
     
 
     if(useravailable){
-        console.log(useravailable)
+        //console.log(useravailable)
         const userid=useravailable._id;
         const userhashpassword=useravailable.password;
 
