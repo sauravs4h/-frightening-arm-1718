@@ -1,0 +1,85 @@
+#navbar{
+    display: flex;
+   
+}
+
+
+#navmid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    /* background-color: aqua; */
+    width: 50%;
+}
+#navmid>input{
+    height: 30px;
+    width: 90%;
+    
+
+}
+#navmid>span{
+    /* margin-top: 10px; */
+    align-items: center;
+}
+
+#odetails{
+    margin-right: 40px;
+}
+
+#home{
+    border: 1px solid red;
+    height: 500px;
+    display: flex;
+}
+
+#contectdiv{
+    width: 20%;
+    /* background-color: aqua; */
+    text-align: center;
+    border: 1px solid black;
+}
+
+#messagediv{
+    width: 80%;
+    /* background-color: blue; */
+}
+#groupname{
+    border: 1px solid black;
+    height: 50px;
+    
+   display: flex;
+    align-items: center; 
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} 
+
+#messagenav{
+    border: 1px solid black;
+    height: 50px;
+    
+   display: flex;
+    align-items: center; 
+   
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#messagename{
+    margin-left: 40px;
+}
+
+#typemessagediv{
+    display: flex;
+   
+    
+}
+
+#typemessagediv>input{
+    width: 80%;
+    height: 30px;
+}
+
+#allmessage{
+    height: 81%;
+}

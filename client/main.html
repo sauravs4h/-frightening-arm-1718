@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js" integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <title>chat</title>
 </head>
 <body>
     <div id="navbar">
@@ -31,6 +33,16 @@
             <div id="groupname">
                 <h2>NXM-201-B-22</h2>
             </div>
+
+            <div id="rooms">
+                <select name="" id="roomsoption">
+                    <option value="java">java</option>
+                    <option value="nxm">nxm</option>
+                    <option value="html">html</option>
+                    <option value="css">css</option>
+                </select>
+
+            </div>
             
 
         </div>
@@ -41,13 +53,25 @@
             </div>
 
             <div id="allmessage">
+                <!-- <div class="message">
+                    <p>saurav <span>9:00 am</span></p>
+                    <p>
+                        hello this is saurav
+                    </p>
+
+                </div> -->
+              
 
             </div>
 
             <div id="typemessagediv">
+                <form action="" id="type_message_form">
+                    <input type="text" id="message">
+                    <input type="submit" id="sendbutton" placeholder="SEND">
+                
 
-                <input type="text">
-                <button id="sendbutton">send</button>
+                </form>
+                
 
             </div>
 
@@ -56,3 +80,4 @@
     
 </body>
 </html>
+<script src="./src/main.js"></script>
