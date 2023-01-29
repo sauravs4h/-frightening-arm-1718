@@ -12,6 +12,7 @@ const {connection}=require("./config/db")
 const {srout}=require("./routes/signup");
 const {lrout}=require("./routes/login")
 const {Usermodel}=require("./models/user.model");
+const {userjoin, getcurrentuser, userleave,getuserroom}=require("./utils/users")
 
 const {formatefunction}=require("./utils/message")
 
@@ -45,9 +46,22 @@ io.on("connection",(socket)=>{
     console.log("client is connected");
 
     socket.on("joinchatroom",({roomvalue,username})=>{
-        console.log(roomvalue,username);
+        
+        const user=userjoin(socket.id,username,roomvalue);
 
-        socket.join(roomvalue);
+        socket.join(user.room);
+
+
+        //rejoin room
+        socket.on("rejoinchatroom",({roomvalue,username})=>{
+            userleave(socket.id);
+
+            const user=userjoin(socket.id,username,roomvalue);
+
+            socket.join(user.room);
+
+        })
+        
 
 
           //welcome user
@@ -56,7 +70,7 @@ io.on("connection",(socket)=>{
 
     //broadcast when a user connect
 
-    socket.broadcast.to(roomvalue).emit("message",formatefunction('user',`${username}  is connected`))
+    socket.broadcast.to(user.room).emit("message",formatefunction('user',`${username}  is connected`))
 
 
     
@@ -66,15 +80,25 @@ io.on("connection",(socket)=>{
 
     // chat message;
     socket.on("chatmsg",(msg)=>{
-        //console.log(msg)
-        io.emit("message",formatefunction('user',msg));
+
+        const user=getcurrentuser(socket.id);
+        
+        console.log("chatmsg:-", user)
+       // console.log(user.room);
+        io.to(user.room).emit("message",formatefunction(user.username,msg));
     })
 
   
     //Run when client disconnected
 
     socket.on('disconnect',()=>{
-        io.emit('message',formatefunction('user',"a user has left the chat"));
+        const user=userleave(socket.id);
+      //  console.log("disconnect:-",user)
+       // console.log(user[0].room)
+
+      //  let roomm=user[0].room
+
+        io.to().emit('message',formatefunction('user',"a user has left the chat"));
     })
 })
 

@@ -34,7 +34,7 @@ room.onchange=()=>{
     // console.log(room.value)
     let roomvalue=room.value
     console.log(roomvalue)
-    ws.emit("joinchatroom",{roomvalue,username});
+    ws.emit("rejoinchatroom",{roomvalue,username});
  }
 
    // console.log(username)
